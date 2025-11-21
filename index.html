@@ -36,10 +36,31 @@
       <h2>LENTIL SOUP</h2>
       <p class="desc">40% healthy</p>
 
-      <div class="search-box">
-        <img src="RecipeFront/images/figma-1st-semester-recipe/images/search-interface.png" alt="Search Icon" class="search-icon">
-        <input type="text" placeholder="Search">
-      </div>
+     <div class="search-box">
+  <img 
+    src="RecipeFront/images/figma-1st-semester-recipe/images/search-interface.png" 
+    alt="Search Icon" 
+    class="search-icon"
+    style="cursor:pointer;"
+    onclick="goToSearch()"
+  >
+
+  <input 
+    type="text" 
+    id="mainSearch" 
+    placeholder="Search"
+    onkeydown="if(event.key === 'Enter'){ goToSearch(); }"
+  >
+</div>
+
+<script>
+  function goToSearch() {
+    let text = document.getElementById("mainSearch").value.trim();
+    if (text === "") return;   // prevents empty search
+    location.href = "RecipeSRPandSearch/RecipeSRPandSearch.html";
+  }
+</script>
+
       <p class="small-text">Let’s go already!</p>
     </div>
   </section>
